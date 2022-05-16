@@ -1,0 +1,13 @@
+.sideBar{
+    background-color: blueviolet;
+    float: left;
+    padding-top: 15px;
+}
+
+.link{
+     padding: 5px 10px;
+}
+
+.linkItem{
+    color: #fff;
+}

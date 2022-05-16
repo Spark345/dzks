@@ -1,0 +1,66 @@
+.appeal{
+    border: 1px solid firebrick;
+    padding: 10px 0 10px 0;
+}
+.appealInner{
+    display: flex;
+    align-items: center;
+}
+.appealItems{
+    display: flex;
+    width: 800px;
+    padding: 5px 10px;
+    list-style: none;
+}
+.appealItem{
+    display: flex;
+    line-height: 22px;
+    width: 130px;
+    align-items: center;
+}
+
+.appealItemText{
+    width: 250px;
+    margin-left: 30px;
+}
+.status{
+    margin-right: 60px;
+}
+.statusItems{
+    margin-left: 200px;
+
+}
+.statusItem{
+    display: flex;
+}
+.statusTextOpen{
+    border: 1px solid #008000;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: #008000;
+    line-height: 16px;
+    cursor: pointer;
+
+}
+.statusItemClose{
+    border: 1px solid #B22222;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    background-color: #B22222;
+    line-height: 16px;
+    cursor: pointer;
+
+}
+.statusBtn{
+    margin-left: 20px;
+    border: 1px solid #A0522D;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    background-color: #DEB887;
+    color: #800000;
+    line-height: 16px;
+
+
+}

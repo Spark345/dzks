@@ -1,0 +1,93 @@
+.createAppeal{
+
+}
+.createAppealContent{
+    text-align: center;
+    margin-top: 50px;
+}
+.title{
+    font-family: "Roboto Light";
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 30px;
+    color: #A0522D;
+
+}
+.form{
+
+}
+.formInputItems{
+
+}
+.formInputItem{
+
+ }
+.formInput{
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    color: #A0522D;
+    font-family: "Roboto Light";
+    font-size: 16px;
+    line-height: 16px;
+}
+.formInput:focus{
+    border: 1px solid #A0522D;
+}
+.formInput:hover{
+    width: 250px;
+    transition: 0.3s;
+}
+.formTextareaItem{
+
+}
+.formTextarea{
+    width: 200px;
+    resize: none;
+    padding: 15px 10px 15px 10px;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    color: #A0522D;
+    outline: none;
+    font-family: "Roboto Light";
+    font-size: 16px;
+    line-height: 16px;
+}
+.formTextarea:focus{
+    width: 250px;
+    border: 1px solid #A0522D;
+    transition: 0.3s;
+}
+.formTextarea:hover{
+    width: 250px;
+    transition: 0.3s;
+}
+.formBtnItem{
+
+ }
+.formBtn{
+    width: 100px;
+    padding: 10px 0 10px 0;
+    border: 2px solid  #A0522D;
+    background-color: #DEB887;
+    border-radius: 20px;
+    color: #A0522D;
+    font-family: "Roboto Light";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+
+}
+.formBtn:hover{
+    width: 140px;
+    transition: 0.3s;
+}
+.formBtn:active{
+    border: 2px solid  #800000;
+    color: #800000;
+    width: 110px;
+}
