@@ -58,12 +58,12 @@
     line-height: 16px;
 }
 .formTextarea:focus{
-    width: 250px;
+    width: 300px;
     border: 1px solid #A0522D;
     transition: 0.3s;
 }
 .formTextarea:hover{
-    width: 250px;
+    width: 300px;
     transition: 0.3s;
 }
 .formBtnItem{

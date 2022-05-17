@@ -1,0 +1,13 @@
+.select{
+    padding: 5px;
+    background-color: #F5F5DC;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    margin-right: 40px;
+    position: relative;
+}
+.option{
+    position: absolute;
+    border: 2px solid red;
+}

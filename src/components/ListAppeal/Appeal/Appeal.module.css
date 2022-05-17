@@ -1,10 +1,14 @@
 .appeal{
-    border: 1px solid firebrick;
-    padding: 10px 0 10px 0;
+    border: 2px solid firebrick;
+    padding: 15px 0 15px 0;
+    border-radius: 10px;
+    background-color: #F5F5DC;
+    margin: 30px 20px 30px 20px;
 }
 .appealInner{
     display: flex;
     align-items: center;
+
 }
 .appealItems{
     display: flex;
@@ -16,18 +20,22 @@
     display: flex;
     line-height: 22px;
     width: 130px;
+
     align-items: center;
 }
 
-.appealItemText{
+.appealItemMessage{
     width: 250px;
-    margin-left: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .status{
-    margin-right: 60px;
+
 }
 .statusItems{
-    margin-left: 200px;
+    margin-left: 100px;
 
 }
 .statusItem{

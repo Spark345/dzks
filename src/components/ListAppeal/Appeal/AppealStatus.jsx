@@ -1,21 +1,13 @@
-import React, {useState, useEffect} from "react";
+
 import classes from "./Appeal.module.css"
 
-const AppealStatusWithHooks = (props) => {
-    
-    // let [status , setStatus] = useState(props.status)
+const AppealStatus = (props) => {
 
-    // useEffect(()=>{
-    //     setStatus(props.status)
-    // }, [props.status])
-
-    const activateEditMode = () =>{
-        // setStatus(true);
+    const openStatus = () =>{
         props.onOpenStatus(props.appealId)
         console.log(props.appealId)
     }
-    const deactivateEditMode = () => {
-        // setStatus(false);
+    const closeStatus = () => {
         props.onCloseStatus(props.appealId)
         console.log(props.appealId)
     }
@@ -25,12 +17,12 @@ const AppealStatusWithHooks = (props) => {
             <div className={classes.statusItems}>
                 {props.status &&
                     <div className={classes.statusItem}>
-                        <span className={classes.statusTextOpen} onClick={deactivateEditMode}>Открыта</span>
+                        <span className={classes.statusTextOpen} onClick={closeStatus}>Открыта</span>
                     </div>
                 }
                 {!props.status &&
                     <div className={classes.statusItem}>
-                        <span className={classes.statusItemClose} onClick={activateEditMode}>Закрыта</span>
+                        <span className={classes.statusItemClose} onClick={openStatus}>Закрыта</span>
                     </div>
                 }
             </div>
@@ -39,4 +31,4 @@ const AppealStatusWithHooks = (props) => {
     );
 }
 
-export default  AppealStatusWithHooks;
+export default  AppealStatus;

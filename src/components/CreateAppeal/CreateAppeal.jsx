@@ -1,8 +1,13 @@
 import classes from "./CreateAppeal.module.css"
 import {Field, reduxForm} from "redux-form";
+import Modal from "../UI/Modal/Modal";
+import {useState} from "react";
 
 
 const CreateAppeal = (props) =>{
+
+
+
     const addNewAppeal = (values) => {
         props.sendAppeal(values.lastName,values.name, values.computerName,values.newAppealText,)
     }
@@ -12,13 +17,18 @@ const CreateAppeal = (props) =>{
                 <h2 className={classes.title}>Сформируйте заявку</h2>
                 <CreateAppealReduxForm onSubmit={addNewAppeal} />
             </div>
+
         </div>
 
     );
 }
 
 const CreateAppealForm = (props) =>{
+
+    const [modalActive, setModalActive] = useState(false)
+
     return(
+        <div>
             <form className={classes.form} onSubmit={props.handleSubmit}>
                 <div className={classes.formInputItems}>
                     <div className={classes.formInputItem}>
@@ -35,9 +45,12 @@ const CreateAppealForm = (props) =>{
                     </div>
                 </div>
                 <div className={classes.formBtnItem}>
-                    <button className={classes.formBtn} >Send</button>
+                    <button className={classes.formBtn} onClick={() => setModalActive(true)} >Send</button>
                 </div>
             </form>
+            <Modal active={modalActive} setActive={setModalActive}> Заявка успешно сформирована!</Modal>
+        </div>
+
     );
 }
 
