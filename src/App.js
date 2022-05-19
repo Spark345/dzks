@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import {Route, Routes} from "react-router-dom";
 import CreateAppealContainer from "./components/CreateAppeal/CreateAppealContainer";
 import {ListAppealContainer} from "./components/ListAppeal/ListAppealContainer";
+import {LoginContainer} from "./components/Login/LoginContainer";
 
 function App(props) {
     return (
@@ -14,6 +15,7 @@ function App(props) {
                 <Routes>
                     <Route path={'/appeal'} element={<CreateAppealContainer {...props} />}/>
                     <Route path={'/listAppeal'} element={<ListAppealContainer/>}/>
+                    <Route path={'/login'} element={<LoginContainer/>}/>
                 </Routes>
             </div>
         </div>

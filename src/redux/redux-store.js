@@ -1,10 +1,12 @@
 import {combineReducers,compose, createStore} from "redux";
 import appealReducer from "./appeal-reducer"
 import {reducer as formReducer} from "redux-form";
+import loginReducer from "./login-reducer";
 
 
 let reducers = combineReducers({
     appealPage: appealReducer,
+    loginPage: loginReducer,
     form: formReducer,
 });
 

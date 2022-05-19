@@ -3,6 +3,7 @@ import classesAppeal from "./Appeal/Appeal.module.css"
 import Appeal from "./Appeal/Appeal";
 import MySelect from "../UI/Select/MySelect";
 import {useState} from "react";
+import {Navigate} from "react-router-dom";
 
 const ListAppeal = (props) =>{
     const [selectedSort, setSelectedSort] = useState('')
@@ -33,6 +34,9 @@ const ListAppeal = (props) =>{
         }
 
     }
+
+    if(props.isAuth === false)  return <Navigate to = "/login"/>
+
     return(
         <div className={classes.applications}>
             <div className={ `${classesAppeal.appealInner} ${classes.top}`}>

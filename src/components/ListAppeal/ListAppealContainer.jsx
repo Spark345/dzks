@@ -11,6 +11,8 @@ import ListAppeal from "./ListAppeal";
 let mapStateToProps = (state) => {
     return{
         appeals: state.appealPage.appeals,
+        isAuth: state.loginPage.isAuth,
+        password: state.loginPage.password,
     }
 };
 
@@ -35,8 +37,7 @@ let mapDispatchToProps = (dispatch) =>{
         setAppealDate: (name) =>{
             dispatch(sortAppealsDateAC(name))
 
-        }
-
+        },
 
     }
 }
