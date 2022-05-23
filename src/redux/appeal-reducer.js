@@ -7,9 +7,9 @@ const SET_SORT_APPEALS_DATE = 'SET_SORT_APPEALS_DATE'
 
 let initialState = {
     appeals:[
-        {id: 1, lastName:"Иванов", Name:"Руслан", computerName: "comp_1", message: "Пк не работает", Date: "2022 03 05", status: true},
-        {id: 2, lastName:"Петров", Name:"Генадий", computerName: "comp_2", message: "Требуется переустановить Windows",Date: "2021 12 25", status: false },
-        {id: 3, lastName:"Амель", Name:"Артём", computerName: "comp_3", message: "Монитор не включается",Date: "2021 10 22", status: true },
+        {id: 1, lastName:"Иванов", Name:"Руслан", computerName: "comp_1", message: "Пк не работает", Date: "2022.03.05", status: true},
+        {id: 2, lastName:"Петров", Name:"Генадий", computerName: "comp_2", message: "Требуется переустановить Windows",Date: "2021.12.25", status: false },
+        {id: 3, lastName:"Амель", Name:"Артём", computerName: "comp_3", message: "Монитор не включается",Date: "2021.10.22", status: true },
     ]
 
 }
@@ -31,7 +31,7 @@ let Day = addZero(date.getDate());
 const appealReducer = (state = initialState, action) => {
     switch (action.type){
         case ADD_APPEAL: {
-            let dateNow = addZero(Year + ' ' + Month + ' ' + Day);
+            let dateNow = addZero(Year + '.' + Month + '.' + Day);
             let newAppeal = {
                 id: i++,
                 lastName: action.lastName,

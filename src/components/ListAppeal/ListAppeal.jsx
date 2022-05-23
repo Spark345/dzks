@@ -40,13 +40,13 @@ const ListAppeal = (props) =>{
     return(
         <div className={classes.applications}>
             <div className={ `${classesAppeal.appealInner} ${classes.top}`}>
-                <ul className={classesAppeal.appealItems}>
-                    <li className={`${classesAppeal.appealItem} ${classes.topItem}`}>Фамилия</li>
-                    <li className={`${classesAppeal.appealItem} ${classes.topItem}`}>Имя</li>
-                    <li className={`${classesAppeal.appealItem} ${classes.topItem}`}>Имя компьютера</li>
-                    <li className={`${classesAppeal.appealItem} ${classes.topItem} ${classesAppeal.appealItemMessage}`}>Проблема</li>
-                    <li className={`${classesAppeal.appealItem} ${classes.topItem}`}>Дата</li>
-                </ul>
+                <div className={`${classesAppeal.appealItems} ${classes.topItems}`}>
+                    <span className={`${classesAppeal.appealItem} ${classes.topItem}`}>Фамилия</span>
+                    <span className={`${classesAppeal.appealItem} ${classes.topItem}`}>Имя</span>
+                    <span className={`${classesAppeal.appealItem} ${classes.topItem}`}>Имя компьютера</span>
+                    <span className={`${classesAppeal.appealItem} ${classes.topItem} ${classesAppeal.appealItemMessage}`}>Проблема</span>
+                    <span className={`${classesAppeal.appealItem} ${classesAppeal.appealItemDate} ${classes.topItem}`}>Дата</span>
+                </div>
                 <span className={`${classesAppeal.appealItem} ${classes.topItem} ${classesAppeal.statusItems}`}>Статус</span>
                 <MySelect value={selectedSort}
                           sortAppeal={sortAppeal}

@@ -16,7 +16,8 @@ const Appeal = (props) =>{
                         <span className={classes.appealItem}>{props.Name}</span>
                         <span className={classes.appealItem}>{props.computerName}</span>
                         <span className={`${classes.appealItem} ${classes.appealItemMessage}`} onClick={() => setModalActive(true)} >{props.message}</span>
-                        <span className={classes.appealItem}>{props.Date}</span>
+                        {props.message.length >= 30 ? <p className={classes.appealMessageEnd}>...</p> : null}
+                        <span className={`${classes.appealItem} ${classes.appealItemDate}`}>{props.Date}</span>
                     </div>
                 <div className={classes.status}>
                     <AppealStatus onOpenStatus = {props.onOpenStatus}

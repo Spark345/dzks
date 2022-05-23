@@ -13,11 +13,13 @@ const Login = (props) => {
     if (props.isAuth === true) return <Navigate to = "/listAppeal"/>
 
     return (
-        <div>
-            <h2>LOGIN p.s. "пароль: 123"</h2>
-            <br/>
-            <CreateLoginReduxForm onSubmit={setPassword} />
+        <div className={classes.createAppeal}>
+            <div className={classes.createAppealContent}>
+                <h2 className={classes.title} >LOGIN</h2>
+                <CreateLoginReduxForm onSubmit={setPassword} />
+            </div>
         </div>
+
     );
 };
 
@@ -32,7 +34,7 @@ const CreateLoginForm = (props) => {
                     </div>
                 </div>
                 <div className={classes.formBtnItem}>
-                    <button className={classes.formBtn}>Send</button>
+                    <button className={classes.formBtn}>Login</button>
                 </div>
             </form>
         </div>

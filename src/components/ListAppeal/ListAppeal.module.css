@@ -2,16 +2,17 @@
 
 }
 .top{
-    height: 50px;
-    background-color: #800000;
-    padding: 0px 20px 0px 22px;
+
+    background-color: #313830;
+    padding: 5px 30px 5px 32px;
 
 }
 .topItems{
 
 }
 .topItem{
-    color: #F5F5DC;
+    color: white;
+
 }
 .topItemText{
 

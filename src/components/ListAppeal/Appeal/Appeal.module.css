@@ -1,8 +1,8 @@
 .appeal{
-    border: 2px solid firebrick;
-    padding: 15px 0 15px 0;
+    border: 2px solid #65804b;
+    padding: 20px 10px 20px 10px;
     border-radius: 10px;
-    background-color: #F5F5DC;
+    background-color: #313830;
     margin: 30px 20px 30px 20px;
 }
 .appealInner{
@@ -15,6 +15,7 @@
     width: 800px;
     padding: 5px 10px;
     list-style: none;
+    color: white;
 }
 .appealItem{
     display: flex;
@@ -23,13 +24,18 @@
 
     align-items: center;
 }
-
+.appealItemDate{
+    padding-left: 30px;
+}
 .appealItemMessage{
-    width: 250px;
-    margin-right: 40px;
+    min-width: 253px;
     margin-left: 40px;
     white-space: nowrap;
     overflow: hidden;
+
+}
+.appealMessageEnd{
+
 }
 .status{
 
@@ -42,28 +48,28 @@
     display: flex;
 }
 .statusTextOpen{
-    border: 1px solid #008000;
+    border: 2px solid #65804b;
     padding: 10px 10px 10px 10px;
     border-radius: 20px;
     color: white;
-    background-color: #008000;
+    background-color: #65804b;
     line-height: 16px;
     cursor: pointer;
 
 }
 .statusItemClose{
-    border: 1px solid #B22222;
+    border: 2px solid #80292c;
     border-radius: 20px;
     padding: 10px 10px 10px 10px;
     color: white;
-    background-color: #B22222;
+    background-color: #80292c;
     line-height: 16px;
     cursor: pointer;
 
 }
 .statusBtn{
     margin-left: 20px;
-    border: 1px solid #A0522D;
+    border: 2px solid #A0522D;
     border-radius: 20px;
     padding: 10px 10px 10px 10px;
     background-color: #DEB887;

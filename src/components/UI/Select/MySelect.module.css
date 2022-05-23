@@ -1,13 +1,36 @@
 .select{
-    padding: 5px;
-    background-color: #F5F5DC;
-    border-radius: 7px;
-    border: none;
+    position: relative;
+
+}
+.select:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    z-index: 1;
+
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #ffffff transparent transparent transparent;
+}
+.select select{
+    display: block;
+    font-family: Roboto;
+    width: 100%;
+    font-size: 15px;
+    border: 2px solid #65804b;
+    background: none;
+    color: white;
+    padding: 10px 33px 10px 15px;
+    border-radius: 10px;
     outline: none;
     margin-right: 40px;
-    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+
 }
 .option{
-    position: absolute;
-    border: 2px solid red;
+
+
 }
