@@ -2,3 +2,8 @@
     grid-area: h;
     background-color: orange;
 }
+.img{
+    width: 1300px;
+    height: 300px;
+    object-fit: cover;
+}

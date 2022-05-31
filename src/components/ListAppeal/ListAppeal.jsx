@@ -5,24 +5,25 @@ import MySelect from "../UI/Select/MySelect";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 
+
+
 const ListAppeal = (props) =>{
     const [selectedSort, setSelectedSort] = useState('')
 
     let appealElement = props.appeals.map((appeal)=>
         <Appeal lastName = {appeal.lastName}
-                Name = {appeal.Name}
+                Name = {appeal.name}
                 computerName = {appeal.computerName}
                 message = {appeal.message}
                 Date = {appeal.Date}
                 status = {appeal.status}
                 appealId = {appeal.id}
-                onOpenStatus = {props.onOpenStatus}
-                onCloseStatus = {props.onCloseStatus}
+                updateStatus = {props.updateStatus}
         />
     );
     const sortAppeal = (name) =>{
         setSelectedSort(name)
-        console.log(name)
+        // console.log(name)
         if(name === "status"){
             props.setAppealBool(name)
         }
@@ -36,7 +37,7 @@ const ListAppeal = (props) =>{
     }
 
     if(props.isAuth === false)  return <Navigate to = "/login"/>
-
+    console.log(props)
     return(
         <div className={classes.applications}>
             <div className={ `${classesAppeal.appealInner} ${classes.top}`}>
@@ -63,7 +64,7 @@ const ListAppeal = (props) =>{
             </div>
 
             {appealElement}
-
+            <button onClick={props.getAppeals}>fff</button>
         </div>
 
     );

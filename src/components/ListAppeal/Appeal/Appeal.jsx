@@ -2,6 +2,7 @@ import classes from "./Appeal.module.css"
 import AppealStatus from "./AppealStatus";
 import Modal from "../../UI/Modal/Modal";
 import {useState} from "react";
+import {updateStatus} from "../../../redux/appeal-reducer";
 
 const Appeal = (props) =>{
 
@@ -20,10 +21,10 @@ const Appeal = (props) =>{
                         <span className={`${classes.appealItem} ${classes.appealItemDate}`}>{props.Date}</span>
                     </div>
                 <div className={classes.status}>
-                    <AppealStatus onOpenStatus = {props.onOpenStatus}
-                                           onCloseStatus = {props.onCloseStatus}
-                                           status = {props.status}
-                                           appealId = {props.appealId}
+                    <AppealStatus status = {props.status}
+                                  appealId = {props.appealId}
+                                  updateStatus = {props.updateStatus}
+
                     />
                 </div>
             </div>

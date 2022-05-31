@@ -4,11 +4,11 @@ import classes from "./Appeal.module.css"
 const AppealStatus = (props) => {
 
     const openStatus = () =>{
-        props.onOpenStatus(props.appealId)
+        props.updateStatus(props.appealId, !props.status)
         console.log(props.appealId)
     }
     const closeStatus = () => {
-        props.onCloseStatus(props.appealId)
+        props.updateStatus(props.appealId, !props.status)
         console.log(props.appealId)
     }
 

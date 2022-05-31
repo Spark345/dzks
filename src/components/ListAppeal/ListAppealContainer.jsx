@@ -1,11 +1,12 @@
 import {connect} from "react-redux";
-import {CloseAppealStatusAC,
+import {
+    CloseAppealStatusAC,
     OpenAppealStatusAC,
     sortAppealsStrAC,
     sortAppealsBoolAC,
-    sortAppealsDateAC} from "../../redux/appeal-reducer";
+    sortAppealsDateAC, getAppeals, updateStatus,
+} from "../../redux/appeal-reducer";
 import ListAppeal from "./ListAppeal";
-
 
 
 let mapStateToProps = (state) => {
@@ -18,14 +19,6 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) =>{
     return{
-        onOpenStatus: (appealId) =>{
-            dispatch(OpenAppealStatusAC(appealId));
-
-        },
-        onCloseStatus: (appealId) =>{
-            dispatch(CloseAppealStatusAC(appealId));
-
-        },
         setAppealStr: (name) =>{
             dispatch(sortAppealsStrAC(name))
 
@@ -38,6 +31,12 @@ let mapDispatchToProps = (dispatch) =>{
             dispatch(sortAppealsDateAC(name))
 
         },
+        getAppeals: () => {
+            dispatch(getAppeals())
+        },
+        updateStatus: (id, status) => {
+            dispatch(updateStatus(id, status))
+        }
 
     }
 }

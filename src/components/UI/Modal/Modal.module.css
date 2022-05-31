@@ -19,7 +19,9 @@
 .modalContent{
     padding: 20px;
     border-radius: 12px;
-    background-color: white;
+    background-color: #334026;
+    border: 2px solid #65804b;
+    color: white;
     max-width: 35vw;
     transform: scale(0.5);
     transition: 0.4s;

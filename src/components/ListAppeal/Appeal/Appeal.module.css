@@ -12,7 +12,8 @@
 }
 .appealItems{
     display: flex;
-    width: 800px;
+    width: 700px;
+    height: 50px;
     padding: 5px 10px;
     list-style: none;
     color: white;
@@ -20,22 +21,22 @@
 .appealItem{
     display: flex;
     line-height: 22px;
-    width: 130px;
-
+    width: 150px;
+    padding: 5px;
     align-items: center;
 }
 .appealItemDate{
     padding-left: 30px;
 }
 .appealItemMessage{
-    min-width: 253px;
-    margin-left: 40px;
+    width: 150px;
+    margin-left: 20px;
     white-space: nowrap;
     overflow: hidden;
 
 }
 .appealMessageEnd{
-
+    margin-top: 10px;
 }
 .status{
 

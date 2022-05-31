@@ -1,13 +1,20 @@
 .sideBar{
-    background-color: blueviolet;
+    background-color: #313830;
     float: left;
     padding-top: 15px;
 }
-
-.link{
-     padding: 5px 10px;
+.title{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    padding: 15px 0 15px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #65804b;
 }
-
+.link{
+     padding: 10px 15px 10px 15px;
+}
 .linkItem{
     color: #fff;
 }
