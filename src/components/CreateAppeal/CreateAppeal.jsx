@@ -9,7 +9,7 @@ const CreateAppeal = (props) =>{
 
 
     const addNewAppeal = (values) => {
-        props.sendAppeal(values.lastName,values.name, values.computerName,values.newAppealText,)
+        props.sendAppeals(values.lastName,values.name, values.computerName,values.newAppealText)
     }
     return(
         <div className={classes.createAppeal}>

@@ -1,7 +1,7 @@
 import classes from "./CreateAppeal.module.css"
 import {connect} from "react-redux";
 import CreateAppeal from "./CreateAppeal";
-import {AddAppealAC} from "../../redux/appeal-reducer";
+import {AddAppealAC, sendAppeals} from "../../redux/appeal-reducer";
 
 
 let mapStateToProps = (state) => {
@@ -12,8 +12,11 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return{
-        sendAppeal: (lastName,name,computerName,newAppealText) => {
-            dispatch(AddAppealAC(lastName,name, computerName, newAppealText));
+        // sendAppeal: (lastName,name,computerName,newAppealText) => {
+        //     dispatch(AddAppealAC(lastName,name, computerName, newAppealText));
+        // },
+        sendAppeals: (lastName, name, computerName, message) =>{
+            dispatch(sendAppeals(lastName, name, computerName, message))
         }
     }
 }

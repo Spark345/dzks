@@ -2,14 +2,16 @@ import classes from "./ListAppeal.module.css"
 import classesAppeal from "./Appeal/Appeal.module.css"
 import Appeal from "./Appeal/Appeal";
 import MySelect from "../UI/Select/MySelect";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
 
 
 
 const ListAppeal = (props) =>{
     const [selectedSort, setSelectedSort] = useState('')
-
+    useEffect(()=>{
+        props.getAppeals()
+    },[])
     let appealElement = props.appeals.map((appeal)=>
         <Appeal lastName = {appeal.lastName}
                 Name = {appeal.name}
@@ -38,6 +40,7 @@ const ListAppeal = (props) =>{
 
     if(props.isAuth === false)  return <Navigate to = "/login"/>
     console.log(props)
+    console.log(props.isFetching)
     return(
         <div className={classes.applications}>
             <div className={ `${classesAppeal.appealInner} ${classes.top}`}>
@@ -62,9 +65,12 @@ const ListAppeal = (props) =>{
                           }
                 />
             </div>
-
-            {appealElement}
-            <button onClick={props.getAppeals}>fff</button>
+            {
+                props.isFetching === false
+                    ? <div>{appealElement}</div>
+                    : <div>Загрузка...</div>
+            }
+            {/*<button onClick={props.getAppeals}>fff</button>*/}
         </div>
 
     );

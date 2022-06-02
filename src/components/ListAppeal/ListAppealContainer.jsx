@@ -1,7 +1,5 @@
 import {connect} from "react-redux";
 import {
-    CloseAppealStatusAC,
-    OpenAppealStatusAC,
     sortAppealsStrAC,
     sortAppealsBoolAC,
     sortAppealsDateAC, getAppeals, updateStatus,
@@ -14,6 +12,7 @@ let mapStateToProps = (state) => {
         appeals: state.appealPage.appeals,
         isAuth: state.loginPage.isAuth,
         password: state.loginPage.password,
+        isFetching: state.appealPage.isFetching,
     }
 };
 
@@ -36,7 +35,7 @@ let mapDispatchToProps = (dispatch) =>{
         },
         updateStatus: (id, status) => {
             dispatch(updateStatus(id, status))
-        }
+        },
 
     }
 }

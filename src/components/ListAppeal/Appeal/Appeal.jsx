@@ -8,7 +8,7 @@ const Appeal = (props) =>{
 
     const [modalActive, setModalActive] = useState(false)
 
-    console.log(props)
+
     return(
         <div className={classes.appeal} >
             <div className={classes.appealInner} >
