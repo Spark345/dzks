@@ -6,7 +6,7 @@ import {AddAppealAC, sendAppeals} from "../../redux/appeal-reducer";
 
 let mapStateToProps = (state) => {
     return{
-
+        userId: state.loginPage.userId
     }
 
 }
@@ -15,8 +15,8 @@ let mapDispatchToProps = (dispatch) => {
         // sendAppeal: (lastName,name,computerName,newAppealText) => {
         //     dispatch(AddAppealAC(lastName,name, computerName, newAppealText));
         // },
-        sendAppeals: (lastName, name, computerName, message) =>{
-            dispatch(sendAppeals(lastName, name, computerName, message))
+        sendAppeals: (userId, lastName, name, computerName, message, datе,levelUrgency) =>{
+            dispatch(sendAppeals(userId, lastName, name, computerName, message, datе, levelUrgency))
         }
     }
 }

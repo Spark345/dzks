@@ -18,36 +18,8 @@ let initialState = {
 
 }
 
-let addZero = (num) => {
-    if (num >= 0 && num <= 9) {
-        return '0' + num;
-    } else {
-        return num;
-    }
-}
-
-
-let date = new Date();
-let Year = date.getFullYear();
-let Month = addZero((date.getMonth() + 1)) ;
-let Day = addZero(date.getDate());
-
 const appealReducer = (state = initialState, action) => {
     switch (action.type){
-        case ADD_APPEAL: {
-            let dateNow = addZero(Year + '.' + Month + '.' + Day);
-            let newAppeal = {
-                lastName: action.lastName,
-                Name: action.name,
-                computerName: action.computerName,
-                message: action.newAppealText,
-                Date: dateNow,
-                status: true,
-            }
-            return{...state,
-                appeals: [...state.appeals, newAppeal]
-            };
-        }
         case SET_APPEALS :{
             return {...state,
                 appeals: action.appeals
@@ -114,8 +86,13 @@ export const getAppeals = () => async (dispatch) => {
     dispatch(setAppeals(data))
 
 }
-export const sendAppeals = (lastName, name, computerName, message) => async (dispatch)  =>{
-    let data = await AppealsAPI.sendAppeals(lastName, name, computerName, message)
+export const getUserAppeals = (userId) => async (dispatch) =>{
+    let data = await AppealsAPI.getUserAppeals(userId)
+    dispatch(setAppeals(data))
+
+}
+export const sendAppeals = (userId, lastName, name, computerName, message, datе, levelUrgency) => async (dispatch)  =>{
+    let data = await AppealsAPI.sendAppeals(userId, lastName, name, computerName, message, datе, levelUrgency)
     // dispatch(AddAppealAC(lastName, name, computerName, message))
 
 

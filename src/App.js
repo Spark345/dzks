@@ -7,10 +7,11 @@ import {ListAppealContainer} from "./components/ListAppeal/ListAppealContainer";
 import {LoginContainer} from "./components/Login/LoginContainer";
 
 function App(props) {
+
     return (
         <div className="app-wrapper">
             <Header/>
-            <Sidebar/>
+            <Sidebar />
             <div className="app-wrapper-content">
                 <Routes>
                     <Route path={'/'} element={<Navigate to={'/appeal'} />}/>

@@ -2,6 +2,8 @@ import classes from "./CreateAppeal.module.css"
 import {Field, reduxForm} from "redux-form";
 import Modal from "../UI/Modal/Modal";
 import {useState} from "react";
+import {Navigate} from "react-router-dom";
+import MySelect from "../UI/Select/MySelect";
 
 
 const CreateAppeal = (props) =>{
@@ -9,18 +11,37 @@ const CreateAppeal = (props) =>{
 
 
     const addNewAppeal = (values) => {
-        props.sendAppeals(values.lastName,values.name, values.computerName,values.newAppealText)
+
+        let addZero = (num) => {
+            if (num >= 0 && num <= 9) {
+                return '0' + num;
+            } else {
+                return num;
+            }
+        }
+
+        let date = new Date();
+        let Year = date.getFullYear();
+        let Month = addZero((date.getMonth() + 1)) ;
+        let Day = addZero(date.getDate());
+
+        let dateNow = addZero(Day + '.' + Month + '.' + Year);
+
+        props.sendAppeals(props.userId, values.lastName,values.name, values.computerName,values.newAppealText, dateNow, values.levelUrgency)
     }
-    return(
-        <div className={classes.createAppeal}>
-            <div className={classes.createAppealContent}>
-                <h2 className={classes.title}>Сформируйте заявку</h2>
-                <CreateAppealReduxForm onSubmit={addNewAppeal} />
+
+    if(props.userId == null)return <Navigate to = "/login"/>
+
+        return(
+            <div className={classes.createAppeal}>
+                <div className={classes.createAppealContent}>
+                    <h2 className={classes.title}>Сформируйте заявку</h2>
+                    <CreateAppealReduxForm onSubmit={addNewAppeal} />
+                </div>
+
             </div>
 
-        </div>
-
-    );
+        );
 }
 
 const CreateAppealForm = (props) =>{
@@ -42,6 +63,14 @@ const CreateAppealForm = (props) =>{
                     </div>
                     <div className={classes.formTextareaItem}>
                         <Field className={classes.formTextarea} placeholder={"Describe your problem"} name={"newAppealText"} component={"textarea"}/>
+                    </div>
+                    <div className={classes.formTextareaItem}>
+                        <Field className={classes.formTextarea} name={"levelUrgency"} component={"select"}>
+                            <option>Уровень сложности</option>
+                            <option value="1">Низкий</option>
+                            <option value="2">Средний</option>
+                            <option value="3">Высокий</option>
+                        </Field>
                     </div>
                 </div>
                 <div className={classes.formBtnItem}>

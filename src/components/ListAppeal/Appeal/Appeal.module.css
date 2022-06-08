@@ -28,6 +28,15 @@
 .appealItemDate{
     padding-left: 30px;
 }
+.appealLevelGreen{
+    color: green;
+}
+.appealLevelYellow{
+    color: yellow;
+}
+.appealLevelRed{
+    color: red;
+}
 .appealItemMessage{
     width: 150px;
     margin-left: 20px;

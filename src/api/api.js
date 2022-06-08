@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: `http://4d12-185-120-190-108.ngrok.io`,
+    baseURL: `http://cf14-109-252-51-226.eu.ngrok.io`,
     // headers: {
     //     'API-KEY': ''
     // }
@@ -13,12 +13,33 @@ export const AppealsAPI = {
         return instance.get(`letters`)
             .then(response => response.data)
     },
-    sendAppeals(lastName, name, computerName, message){
-        return instance.post(`letters`, {lastName, name, computerName, message})
+    getUserAppeals(userId){
+        return instance.get(`users/id:${userId}/letters`)
+            .then(response => response.data)
+    },
+    sendAppeals(userId, lastName, name, computerName, message, date, levelUrgency){
+        return instance.post(`letters/user:${userId}`, {lastName, name, computerName, message, date, levelUrgency})
             .then(response => response.data)
     },
     updateStatus(id, status){
         return instance.put(`letters/id:${id}/status:${status}`)
             .then(response => response.data)
     }
+}
+export const AuthAPI = {
+    getUserData(){
+        return instance.get(`users`)
+            .then(response => response.data)
+    },
+    login(login, password){
+        return instance.post(`users/login`, {login, password} )
+            .then(response => response.data)
+    },
+    logout(){
+        return instance.delete(`users/login`)
+    },
+    register(login, password){
+        return instance.post(`users/registration`, {login, password})
+    }
+
 }

@@ -19,6 +19,14 @@ const Appeal = (props) =>{
                         <span className={`${classes.appealItem} ${classes.appealItemMessage}`} onClick={() => setModalActive(true)} >{props.message}</span>
                         {props.message.length >= 30 ? <p className={classes.appealMessageEnd}>...</p> : null}
                         <span className={`${classes.appealItem} ${classes.appealItemDate}`}>{props.Date}</span>
+                        {props.levelUrgency === 1
+                            ?<span className={`${classes.appealItem} ${classes.appealLevelGreen}`}>Низкий</span>
+                            : props.levelUrgency === 2
+                                ?<span className={`${classes.appealItem} ${classes.appealLevelYellow}`}>Средний</span>
+                                :  props.levelUrgency === 3
+                                    ?<span className={`${classes.appealItem} ${classes.appealLevelRed}`}>Высокий</span>
+                                    :<div> </div>
+                        }
                     </div>
                 <div className={classes.status}>
                     <AppealStatus status = {props.status}

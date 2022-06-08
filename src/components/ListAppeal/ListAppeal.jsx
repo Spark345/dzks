@@ -7,17 +7,24 @@ import {Navigate} from "react-router-dom";
 
 
 
+
 const ListAppeal = (props) =>{
     const [selectedSort, setSelectedSort] = useState('')
     useEffect(()=>{
-        props.getAppeals()
+        if(props.userId === 1){
+            props.getAppeals()
+        }
+        else {
+            props.getUserAppeals(props.userId)
+        }
     },[])
     let appealElement = props.appeals.map((appeal)=>
         <Appeal lastName = {appeal.lastName}
                 Name = {appeal.name}
                 computerName = {appeal.computerName}
                 message = {appeal.message}
-                Date = {appeal.Date}
+                Date = {appeal.date}
+                levelUrgency = {appeal.levelUrgency}
                 status = {appeal.status}
                 appealId = {appeal.id}
                 updateStatus = {props.updateStatus}
@@ -37,10 +44,13 @@ const ListAppeal = (props) =>{
         }
 
     }
+    let logoutUser = () =>{
+        props.logoutUser()
+    }
 
-    if(props.isAuth === false)  return <Navigate to = "/login"/>
     console.log(props)
     console.log(props.isFetching)
+    if(props.userId == null)  return <Navigate to = "/login"/>
     return(
         <div className={classes.applications}>
             <div className={ `${classesAppeal.appealInner} ${classes.top}`}>
@@ -50,10 +60,11 @@ const ListAppeal = (props) =>{
                     <span className={`${classesAppeal.appealItem} ${classes.topItem}`}>Имя компьютера</span>
                     <span className={`${classesAppeal.appealItem} ${classes.topItem} ${classesAppeal.appealItemMessage}`}>Проблема</span>
                     <span className={`${classesAppeal.appealItem} ${classesAppeal.appealItemDate} ${classes.topItem}`}>Дата</span>
+                    <span className={`${classesAppeal.appealItem} ${classesAppeal.appealItemDate} ${classes.topItem}`}>Срочность</span>
                 </div>
                 <span className={`${classesAppeal.appealItem} ${classes.topItem} ${classesAppeal.statusItems}`}>Статус</span>
                 <MySelect value={selectedSort}
-                          sortAppeal={sortAppeal}
+                          Change={sortAppeal}
                           defaultValue="Сортировка"
                           options={
                               [
@@ -64,6 +75,7 @@ const ListAppeal = (props) =>{
                               ]
                           }
                 />
+                {/*<button onClick={()=>{}}>Выйти</button>*/}
             </div>
             {
                 props.isFetching === false
@@ -75,5 +87,12 @@ const ListAppeal = (props) =>{
 
     );
 }
+
+// export const ListAppealUser = (props) =>{
+//
+//     return{
+//
+//     }
+// }
 
 export default ListAppeal;
