@@ -1,9 +1,10 @@
 .appeal{
-    border: 2px solid #65804b;
+
     padding: 20px 10px 20px 10px;
     border-radius: 10px;
     background-color: #313830;
     margin: 30px 20px 30px 20px;
+    box-shadow: 0 0 5px 1px;
 }
 .appealInner{
     display: flex;
@@ -50,31 +51,33 @@
 .status{
 
 }
+.statusDeactivate{
+    pointer-events: none;
+    cursor: default;
+
+}
 .statusItems{
-    margin-left: 100px;
 
 }
 .statusItem{
     display: flex;
+    margin-left: 100px;
+    padding: 10px 10px 10px 10px;;
+    border-radius: 20px;
+    color: white;
+    line-height: 16px;
+    cursor: pointer;
 }
 .statusTextOpen{
     border: 2px solid #65804b;
-    padding: 10px 10px 10px 10px;
-    border-radius: 20px;
-    color: white;
     background-color: #65804b;
-    line-height: 16px;
-    cursor: pointer;
+
 
 }
+
 .statusItemClose{
     border: 2px solid #80292c;
-    border-radius: 20px;
-    padding: 10px 10px 10px 10px;
-    color: white;
     background-color: #80292c;
-    line-height: 16px;
-    cursor: pointer;
 
 }
 .statusBtn{
@@ -87,4 +90,7 @@
     line-height: 16px;
 
 
+}
+.modal{
+    backdrop-color: red;
 }

@@ -53,16 +53,16 @@ const CreateAppealForm = (props) =>{
             <form className={classes.form} onSubmit={props.handleSubmit}>
                 <div className={classes.formInputItems}>
                     <div className={classes.formInputItem}>
-                        <Field className={classes.formInput} placeholder={"Enter your name"} name={"name"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите ваше имя"} name={"name"} component={"input"}/>
                     </div>
                     <div className={classes.formInputItem}>
-                        <Field className={classes.formInput} placeholder={"Enter your last name"} name={"lastName"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите вашу фвамилию"} name={"lastName"} component={"input"}/>
                     </div>
                     <div className={classes.formInputItem}>
-                        <Field className={classes.formInput} placeholder={"Enter your computer name"} name={"computerName"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите имя компьютера"} name={"computerName"} component={"input"}/>
                     </div>
                     <div className={classes.formTextareaItem}>
-                        <Field className={classes.formTextarea} placeholder={"Describe your problem"} name={"newAppealText"} component={"textarea"}/>
+                        <Field className={classes.formTextarea} placeholder={"Опешите проблему"} name={"newAppealText"} component={"textarea"}/>
                     </div>
                     <div className={classes.formTextareaItem}>
                         <Field className={classes.formTextarea} name={"levelUrgency"} component={"select"}>
@@ -74,7 +74,7 @@ const CreateAppealForm = (props) =>{
                     </div>
                 </div>
                 <div className={classes.formBtnItem}>
-                    <button className={classes.formBtn} onClick={() => setModalActive(true)} >Send</button>
+                    <button className={classes.formBtn} onClick={() => setModalActive(true)} >Отправить</button>
                 </div>
             </form>
             <Modal active={modalActive} setActive={setModalActive}> Заявка успешно сформирована!</Modal>

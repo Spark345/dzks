@@ -83,8 +83,8 @@
 
  }
 .formBtn{
-    width: 100px;
-    padding: 10px 0 10px 0;
+    padding: 10px 5px 10px 5px;
+    margin-bottom: 20px;
     border: 2px solid  #65804b;
     background: none;
     border-radius: 20px;
@@ -105,6 +105,18 @@
 
     width: 90px;
     transition: 0.3s;
+}
+.formLink{
+    padding: 10px 5px 10px 5px;
+    background: none;
+    border-radius: 20px;
+    color: white;
+    font-family: "Roboto Light";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

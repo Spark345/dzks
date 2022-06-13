@@ -5,6 +5,7 @@ import {Route, Routes, Navigate} from "react-router-dom";
 import CreateAppealContainer from "./components/CreateAppeal/CreateAppealContainer";
 import {ListAppealContainer} from "./components/ListAppeal/ListAppealContainer";
 import {LoginContainer} from "./components/Login/LoginContainer";
+import {RegisterContainer} from "./components/Register/RegisterContainer";
 
 function App(props) {
 
@@ -18,6 +19,7 @@ function App(props) {
                     <Route path={'/appeal'} element={<CreateAppealContainer {...props} />}/>
                     <Route path={'/listAppeal'} element={<ListAppealContainer/>}/>
                     <Route path={'/login'} element={<LoginContainer/>}/>
+                    <Route path={'/register'} element = {<RegisterContainer/>} />
                 </Routes>
             </div>
         </div>

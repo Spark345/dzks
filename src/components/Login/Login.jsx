@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from "../CreateAppeal/CreateAppeal.module.css";
 import {Field, reduxForm} from "redux-form";
-import {Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 
 
 const Login = (props) => {
@@ -10,24 +10,16 @@ const Login = (props) => {
         props.sendAuthData(values.email, values.password)
 
     }
-    const registerUser = (values) => {
-        props.registerUser(values.email, values.password)
-    }
     console.log(props.userId)
-    if (props.isAuth === true) return <Navigate to = "/"/>
+    if (props.isAuth === true) return <Navigate to = "/listAppeal"/>
     return (
         <div className={classes.createAppeal}>
             <div className={classes.createAppealContent}>
-                <h2 className={classes.title} >LOGIN</h2>
-                {/*<CreateLoginReduxForm onSubmit={setAuthData} />*/}
-                {/*<CreateRegisterReduxForm onSubmit={registerUser} />*/}
-                {props.userId === -2 || props.userId == null
-                    ? <CreateLoginReduxForm onSubmit={setAuthData} text = {<button className={classes.formBtn}>Войти</button>}/>
-                    : <CreateRegisterReduxForm onSubmit={registerUser} text = {<button className={classes.formBtn}>Зарегестрироваться</button>}/>
-                }
+                <h2 className={classes.title} >Авторизация</h2>
+                <CreateLoginReduxForm onSubmit={setAuthData} text = {<button className={classes.formBtn}>Войти</button>}/>
+                {/*<div><Link className = {classes.formLink} to = {'/register'}>Зарегистрироваться</Link></div>*/}
             </div>
         </div>
-
     );
 };
 
@@ -41,11 +33,10 @@ const CreateLoginForm = (props) => {
                         <Field className={classes.formInput} placeholder={"Введите логин"} name={"email"} component={"input"}/>
                     </div>
                     <div className={classes.formInputItem}>
-                        <Field className={classes.formInput} placeholder={"Enter your password"} name={"password"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите пароль"} name={"password"} component={"input"}/>
                     </div>
                 </div>
                 <div className={classes.formBtnItem}>
-
                    {props.text}
                 </div>
             </form>
@@ -55,5 +46,4 @@ const CreateLoginForm = (props) => {
 }
 
 const CreateLoginReduxForm = reduxForm({form: 'login'})(CreateLoginForm)
-const CreateRegisterReduxForm = reduxForm({form: 'register'})(CreateLoginForm)
 export default Login;

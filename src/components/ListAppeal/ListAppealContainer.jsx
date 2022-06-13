@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import {
     sortAppealsStrAC,
     sortAppealsBoolAC,
-    sortAppealsDateAC, getAppeals, updateStatus, getUserAppeals,
+    sortAppealsDateAC, getAppeals, updateStatus, getUserAppeals, sortAppealsUrgencyAC, setIsFetching,
 } from "../../redux/appeal-reducer";
 import ListAppeal from "./ListAppeal";
 import {logoutUser} from "../../redux/login-reducer";
@@ -32,14 +32,17 @@ let mapDispatchToProps = (dispatch) =>{
             dispatch(sortAppealsDateAC(name))
 
         },
+        setAppealUrgency: (name) =>{
+            dispatch(sortAppealsUrgencyAC(name))
+        },
         getAppeals: () => {
             dispatch(getAppeals())
         },
         getUserAppeals: (userId) =>{
             dispatch(getUserAppeals(userId))
         },
-        updateStatus: (id, status) => {
-            dispatch(updateStatus(id, status))
+        updateStatus: (id, status, inspect) => {
+            dispatch(updateStatus(id, status, inspect))
         },
         logoutUser: () =>{
             dispatch(logoutUser())

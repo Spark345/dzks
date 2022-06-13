@@ -46,7 +46,12 @@ export const loginUser = (login, password) => async (dispatch) =>{
     let data = await AuthAPI.login(login, password)
     console.log(data.userId)
     // dispatch(getAuthUserData(data.userId))
+    if(data.resultCode === 1){
         dispatch(setAuthData(data.userId, true))
+    }
+    else {
+        dispatch(registerUser)
+    }
 
 }
 export const logoutUser = () => async (dispatch) =>{

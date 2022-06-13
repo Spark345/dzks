@@ -1,6 +1,6 @@
 import Login from "./Login";
 import {connect} from "react-redux";
-import {loginUser, registerUser} from "../../redux/login-reducer";
+import {loginUser} from "../../redux/login-reducer";
 
 let mapStateToProps = (state) =>{
     return{
@@ -13,9 +13,6 @@ let mapDispatchToProps = (dispatch) =>{
         sendAuthData: (email, password) => {
             dispatch(loginUser(email, password))
         },
-        registerUser: (login, password) =>{
-            dispatch(registerUser(login, password))
-        }
     }
 }
 
