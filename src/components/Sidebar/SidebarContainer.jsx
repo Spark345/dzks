@@ -11,7 +11,9 @@ const mapStateToProps = (state) =>{
 }
 const mapDispatchToProps = (dispatch) =>{
     return{
+        rrr: () => {
 
+    }
     }
 }
 export const SidebarContainer = connect(mapStateToProps, mapDispatchToProps)(<Sidebar />)

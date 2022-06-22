@@ -6,7 +6,28 @@ import {
 } from "../../redux/appeal-reducer";
 import ListAppeal from "./ListAppeal";
 import {logoutUser} from "../../redux/login-reducer";
+import {useEffect} from "react";
 
+const ListAppealSideEffect = (props) =>{
+
+    useEffect(()=>{
+        if(props.userId === 1 && props.appeals){
+            props.getAppeals()
+
+        }
+        else {
+            if(props.userId !== 1 && props.userId !== null && props.appeals){
+                props.getUserAppeals(props.userId)
+            }
+
+        }
+
+    },[props.userId])
+
+    return(
+        <ListAppeal props = {props} />
+    );
+}
 
 
 let mapStateToProps = (state) => {

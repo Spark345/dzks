@@ -4,6 +4,7 @@ import Modal from "../UI/Modal/Modal";
 import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import MySelect from "../UI/Select/MySelect";
+import MyButton from "../UI/Button/MyButton";
 
 
 const CreateAppeal = (props) =>{
@@ -52,29 +53,29 @@ const CreateAppealForm = (props) =>{
         <div>
             <form className={classes.form} onSubmit={props.handleSubmit}>
                 <div className={classes.formInputItems}>
-                    <div className={classes.formInputItem}>
+                    <div className={classes.formItem}>
                         <Field className={classes.formInput} placeholder={"Введите ваше имя"} name={"name"} component={"input"}/>
                     </div>
-                    <div className={classes.formInputItem}>
+                    <div className={classes.formItem}>
                         <Field className={classes.formInput} placeholder={"Введите вашу фвамилию"} name={"lastName"} component={"input"}/>
                     </div>
-                    <div className={classes.formInputItem}>
+                    <div className={classes.formItem}>
                         <Field className={classes.formInput} placeholder={"Введите имя компьютера"} name={"computerName"} component={"input"}/>
                     </div>
-                    <div className={classes.formTextareaItem}>
+                    <div className={classes.formItem}>
                         <Field className={classes.formTextarea} placeholder={"Опешите проблему"} name={"newAppealText"} component={"textarea"}/>
                     </div>
-                    <div className={classes.formTextareaItem}>
-                        <Field className={classes.formTextarea} name={"levelUrgency"} component={"select"}>
-                            <option>Уровень сложности</option>
-                            <option value="1">Низкий</option>
+                    <div className={classes.formItem}>
+                        <Field className={classes.formSelect} name={"levelUrgency"} component={"select"}>
+                            <option disabled="disabled" >Уровень сложности</option>
+                            <option color="red" value="1">Низкий</option>
                             <option value="2">Средний</option>
                             <option value="3">Высокий</option>
                         </Field>
                     </div>
                 </div>
-                <div className={classes.formBtnItem}>
-                    <button className={classes.formBtn} onClick={() => setModalActive(true)} >Отправить</button>
+                <div>
+                    <MyButton onClick={() => setModalActive(true)} >Отправить</MyButton>
                 </div>
             </form>
             <Modal active={modalActive} setActive={setModalActive}> Заявка успешно сформирована!</Modal>

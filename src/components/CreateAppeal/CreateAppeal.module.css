@@ -11,9 +11,7 @@
     padding: 50px 15px 50px 15px;
 }
 .title{
-    font-family: "Roboto Light";
-    font-weight: 600;
-    line-height: 20px;
+
     margin-bottom: 30px;
     color: white;
     text-transform: uppercase;
@@ -25,34 +23,36 @@
 .formInputItems{
 
 }
-.formInputItem{
+.formItem{
 
- }
+    margin-bottom: 20px;
+    font-family: "Roboto Light";
+    font-size: 16px;
+    line-height: 16px;
+    transition: 0.3s;
+
+}
 .formInput{
     width: 200px;
     padding: 10px 10px 10px 10px;
     border: 2px solid #65804b;
     border-radius: 15px;
-    margin-bottom: 15px;
-    outline: none;
     color: white;
     background: none;
-    font-family: "Roboto Light";
     text-align: center;
-    font-size: 16px;
-    line-height: 16px;
-    transition: 0.3s;
-    cursor: pointer;
+    outline: none;
+
+
 }
 .formInput:focus{
+    font-family: "Roboto Light";
+    font-weight: 600;
+    line-height: 20px;
     border: 2px solid  #2ecc71;
     transition: 0.3s;
     width: 250px;
 }
 .formInput:hover{
-
-}
-.formTextareaItem{
 
 }
 .formTextarea{
@@ -62,16 +62,13 @@
     border: 2px solid #65804b;
     background: none;
     border-radius: 15px;
-    margin-bottom: 20px;
     color: white;
     outline: none;
-    font-family: "Roboto Light";
-    font-size: 16px;
-    line-height: 16px;
-    transition: 0.3s;
-
 }
 .formTextarea:focus{
+    font-family: "Roboto Light";
+    font-weight: 600;
+    line-height: 20px;
     width: 300px;
     border: 2px solid #2ecc71;
     transition: 0.3s;
@@ -79,45 +76,22 @@
 .formTextarea:hover{
     transition: 0.3s;
 }
-.formBtnItem{
-
- }
-.formBtn{
-    padding: 10px 5px 10px 5px;
-    margin-bottom: 20px;
-    border: 2px solid  #65804b;
-    background: none;
-    border-radius: 20px;
-    color: white;
+.formSelect{
     font-family: "Roboto Light";
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    width: 200px;
+    padding: 15px 10px 15px 10px;
+    border: 2px solid #65804b;
+    border-radius: 15px;
+    color: white;
+    background: none;
+    text-align: center;
+    outline: none;
     cursor: pointer;
 
 }
-.formBtn:hover{
 
-    background: #2ecc71;
-    transition: 0.3s;
-}
-.formBtn:active{
-
-    width: 90px;
-    transition: 0.3s;
-}
-.formLink{
-    padding: 10px 5px 10px 5px;
-    background: none;
-    border-radius: 20px;
-    color: white;
-    font-family: "Roboto Light";
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-    cursor: pointer;
-
-}
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {

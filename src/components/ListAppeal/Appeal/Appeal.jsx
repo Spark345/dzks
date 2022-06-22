@@ -39,11 +39,11 @@ const Appeal = (props) =>{
                         {props.message.length >= 30 ? <p className={classes.appealMessageEnd}>...</p> : null}
                         <span className={`${classes.appealItem} ${classes.appealItemDate}`}>{props.Date}</span>
                         {props.levelUrgency === 1
-                            ?<span className={`${classes.appealItem} ${classes.appealLevelGreen}`}>Низкий</span>
+                            ?<span className={`${classes.appealItem} ${classes.appealLevel}`}><span className={`${classes.appealLevelGreen}`}> </span></span>
                             : props.levelUrgency === 2
-                                ?<span className={`${classes.appealItem} ${classes.appealLevelYellow}`}>Средний</span>
+                                ?<span className={`${classes.appealItem} ${classes.appealLevel}`}><span className={`${classes.appealLevelYellow}`}> </span></span>
                                 :  props.levelUrgency === 3
-                                    ?<span className={`${classes.appealItem} ${classes.appealLevelRed}`}>Высокий</span>
+                                    ?<span className={`${classes.appealItem} ${classes.appealLevel}`}><span className={`${classes.appealLevelRed}`}> </span></span>
                                     :<div> </div>
                         }
                         {props.status === false && props.inspect === false && props.userId !== 1

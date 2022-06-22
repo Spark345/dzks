@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: `http://a09b-109-252-51-226.eu.ngrok.io`,
+    baseURL: `http://c76d-109-252-51-226.eu.ngrok.io`,
     // headers: {
     //     'API-KEY': ''
     // }
@@ -23,6 +23,10 @@ export const AppealsAPI = {
     },
     updateStatus(id, status,inspect){
         return instance.put(`letters/id:${id}/status:${status}/inspect:${inspect}`)
+            .then(response => response.data)
+    },
+    getArchiveAppeals(){
+        return instance.get(`/archive`)
             .then(response => response.data)
     }
 }

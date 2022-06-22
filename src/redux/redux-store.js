@@ -3,10 +3,12 @@ import appealReducer from "./appeal-reducer"
 import {reducer as formReducer} from "redux-form";
 import loginReducer from "./login-reducer";
 import thunkMiddleware from "redux-thunk"
+import archiveReducer from "./archive-reducer";
 
 
 let reducers = combineReducers({
     appealPage: appealReducer,
+    archivePage: archiveReducer,
     loginPage: loginReducer,
     form: formReducer,
 });

@@ -1,0 +1,22 @@
+.button{
+    padding: 10px 10px 10px 10px;
+    border: 2px solid  #65804b;
+    background: none;
+    border-radius: 20px;
+    color: white;
+    font-family: "Roboto Light";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+}
+.button:hover{
+
+    background: #2ecc71;
+    transition: 0.3s;
+}
+.button:active{
+
+    width: 90px;
+    transition: 0.3s;
+}
