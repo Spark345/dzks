@@ -1,7 +1,7 @@
 import * as axios from "axios";
 
 const instance = axios.create({
-    baseURL: `http://c76d-109-252-51-226.eu.ngrok.io`,
+    baseURL: `http://5d3b-185-120-190-108.eu.ngrok.io`,
     // headers: {
     //     'API-KEY': ''
     // }

@@ -5,6 +5,8 @@ import {useState} from "react";
 import {Navigate} from "react-router-dom";
 import MySelect from "../UI/Select/MySelect";
 import MyButton from "../UI/Button/MyButton";
+import {required, maxLengthCreator} from "../../utils/validators/validators";
+import {Input, Textarea} from "../UI/FormsControls/FormsControls";
 
 
 const CreateAppeal = (props) =>{
@@ -31,7 +33,7 @@ const CreateAppeal = (props) =>{
         props.sendAppeals(props.userId, values.lastName,values.name, values.computerName,values.newAppealText, dateNow, values.levelUrgency)
     }
 
-    if(props.userId == null)return <Navigate to = "/login"/>
+    // if(props.userId == null)return <Navigate to = "/login"/>
 
         return(
             <div className={classes.createAppeal}>
@@ -45,6 +47,9 @@ const CreateAppeal = (props) =>{
         );
 }
 
+const maxLength15 = maxLengthCreator(15)
+const maxLength20 = maxLengthCreator(20)
+
 const CreateAppealForm = (props) =>{
 
     const [modalActive, setModalActive] = useState(false)
@@ -54,16 +59,16 @@ const CreateAppealForm = (props) =>{
             <form className={classes.form} onSubmit={props.handleSubmit}>
                 <div className={classes.formInputItems}>
                     <div className={classes.formItem}>
-                        <Field className={classes.formInput} placeholder={"Введите ваше имя"} name={"name"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите ваше имя"} name={"name"} component={Input} validate={[required, maxLength15]}/>
                     </div>
                     <div className={classes.formItem}>
-                        <Field className={classes.formInput} placeholder={"Введите вашу фвамилию"} name={"lastName"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите вашу фвамилию"} name={"lastName"} component={Input} validate={[required, maxLength20]}/>
                     </div>
                     <div className={classes.formItem}>
-                        <Field className={classes.formInput} placeholder={"Введите имя компьютера"} name={"computerName"} component={"input"}/>
+                        <Field className={classes.formInput} placeholder={"Введите имя компьютера"} name={"computerName"} component={Input} validate={[required, maxLength20]}/>
                     </div>
                     <div className={classes.formItem}>
-                        <Field className={classes.formTextarea} placeholder={"Опешите проблему"} name={"newAppealText"} component={"textarea"}/>
+                        <Field className={classes.formTextarea} placeholder={"Опешите проблему"} name={"newAppealText"} component={Textarea} validate={[required]} />
                     </div>
                     <div className={classes.formItem}>
                         <Field className={classes.formSelect} name={"levelUrgency"} component={"select"}>

@@ -5,6 +5,7 @@ import MySelect from "../UI/Select/MySelect";
 import {useEffect, useState} from "react";
 import {Link, Navigate} from "react-router-dom";
 import MyButton from "../UI/Button/MyButton";
+import Preloader from "../UI/Preloader/Preloader.jsx";
 
 
 
@@ -131,7 +132,7 @@ const ListAppeal = (props) =>{
                              )
                 }
             </div>
-            : <div>Загрузка...</div>
+            : <Preloader />
     );
 }
 
